@@ -1,0 +1,74 @@
+# .github/workflows/ci.yml
+
+name: Astro CI
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ] # Or your default branch (e.g., "master")
+  pull_request:
+    branches: [ "main" ] # Or your default branch
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    strategy:
+      matrix:
+        node-version: [23.x] # Test against multiple Node.js versions (optional)
+
+    steps:
+      # 1. Checkout Repository
+      - name: Checkout code
+        uses: actions/checkout@v4 # Always use the latest version
+
+      # 2. Setup Node.js
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          # Optional: Cache npm/yarn/pnpm packages for faster builds
+          cache: 'npm' # Or 'yarn' or 'pnpm' depending on your lock file
+
+      # 3. Install Dependencies
+      #    Choose the command based on your package manager
+      - name: Install dependencies (npm)
+        if: ${{ !cancelled() && hashFiles('package-lock.json') }} # Run only if package-lock.json exists
+        run: npm ci # 'ci' is generally faster and safer for CI environments
+
+      # - name: Install dependencies (yarn)
+      #   if: ${{ !cancelled() && hashFiles('yarn.lock') }} # Run only if yarn.lock exists
+      #   run: yarn install --frozen-lockfile
+
+      # - name: Install dependencies (pnpm)
+      #   if: ${{ !cancelled() && hashFiles('pnpm-lock.yaml') }} # Run only if pnpm-lock.yaml exists
+      #   uses: pnpm/action-setup@v2 # Setup pnpm
+      #   with:
+      #     version: 8 # Specify pnpm version if needed
+      # - run: pnpm install --frozen-lockfile
+
+      # 4. Run Linters/Formatters (Optional)
+      #    Make sure you have these scripts defined in your package.json
+      # - name: Run linters
+      #   run: npm run lint # Or yarn lint / pnpm lint
+
+      # - name: Check formatting
+      #   run: npm run format:check # Or yarn format:check / pnpm format:check
+
+      # 5. Run Tests (Optional)
+      #    Make sure you have a test script defined in your package.json
+      # - name: Run tests
+      #   run: npm run test # Or yarn test / pnpm test
+
+      # 6. Build Astro Project
+      #    Make sure you have a build script defined in your package.json
+      - name: Build Astro site
+        run: npm run build # Or yarn build / pnpm build
+
+      # 7. Check Build Output (Optional Sanity Check)
+      - name: Check if build directory exists
+        run: ls dist # Astro builds to 'dist' by default. Adjust if you changed `outDir` in astro.config.mjs

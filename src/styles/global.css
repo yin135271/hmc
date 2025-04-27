@@ -1,0 +1,108 @@
+/* Import a nice, readable font (optional, but recommended) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+
+/* Basic Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* Use the imported font, fallback to generic sans-serif */
+    line-height: 1.7; /* Increased line height for readability */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Very light grey/off-white background for softness */
+    color: #495057; /* Softer dark grey for text instead of pure black */
+}
+
+/* Header and Navigation Styling */
+.site-header {
+    background-color: #a8dadc; /* A soft, calming teal/blue */
+    padding: 15px 0; /* Slightly more padding */
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li {
+    margin: 0 20px; /* More space between menu items */
+}
+
+.main-nav a {
+    color: #1d3557; /* A darker, muted blue for contrast */
+    text-decoration: none;
+    font-weight: 600; /* Slightly bolder */
+    padding: 8px 12px;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    border-radius: 4px; /* Slightly rounded corners for softness */
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #f1faee; /* Light color on hover */
+    background-color: rgba(29, 53, 87, 0.7); /* Semi-transparent dark blue background on hover */
+}
+
+/* Main Content Styling */
+.main-content {
+    padding: 40px 20px; /* Generous padding */
+    flex-grow: 1;
+    max-width: 800px; /* Slightly narrower for focus */
+    margin: 30px auto; /* More vertical margin */
+    width: 90%;
+    background-color: #ffffff; /* White background for content area */
+    border-radius: 8px; /* Rounded corners for the content box */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08); /* Slightly more pronounced shadow */
+}
+
+.main-content h1 {
+    margin-bottom: 25px;
+    color: #457b9d; /* A calm, slightly desaturated blue */
+    text-align: center; /* Center the main heading */
+    font-weight: 300; /* Lighter font weight for heading */
+    font-size: 2.5em; /* Larger heading size */
+}
+
+.main-content p {
+    margin-bottom: 20px; /* More space between paragraphs */
+    color: #495057; /* Consistent text color */
+}
+
+/* Styling for links within the main content */
+.main-content a {
+    color: #e63946; /* A contrasting, but not overly aggressive, accent color (soft red) */
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px dotted #e63946; /* Subtle underline */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.main-content a:hover,
+.main-content a:focus {
+    color: #1d3557; /* Dark blue on hover */
+    border-bottom-color: #1d3557;
+}
+
+
+/* Footer Styling */
+.site-footer {
+    background-color: #495057; /* Use the dark text color for footer background */
+    color: #f8f9fa; /* Light text color for footer */
+    text-align: center;
+    padding: 25px 0; /* More padding */
+    width: 100%;
+    margin-top: auto;
+    font-size: 0.9em; /* Slightly smaller font size */
+}
+
+.site-footer p {
+    margin: 0; /* Reset paragraph margin inside footer */
+}
