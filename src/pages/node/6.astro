@@ -1,18 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
-const pageProps = {
-  title: "關於我們",
-  description: "",
-  image: null,
-  canonicalURL: "/web/20240301175805/http://www.houstonmeditationc.com/?q=zh-hant/node/6",
-};
 ---
-<BaseLayout
-  title="關於我們" description="" canonicalURL="/web/20240301175805/http://www.houstonmeditationc.com/?q=zh-hant/node/6"
->
-  
-<h1 class="page-title">關於我們</h1> <div class="region region-content">
+<BaseLayout pageTitle="關於我們">
+<div class="region region-content">
 <div class="block block-system" id="block-system-main">
 <div class="content">
 <span class="rdf-meta element-hidden" content="關於我們" property="dc:title"></span><span class="rdf-meta element-hidden" content="0" datatype="xsd:integer" property="sioc:num_replies"></span>
@@ -33,5 +23,4 @@ const pageProps = {
 </div> <!-- /.block -->
 </div>
 <!-- /.region -->
-
 </BaseLayout>
