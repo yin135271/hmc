@@ -30,19 +30,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Use Node.js 20.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
-          cache: 'npm' # Or 'yarn' or 'pnpm'
-      - name: Install dependencies (npm)
+          node-version: 22.x
+          cache: 'pnpm' # Or 'yarn' or 'pnpm'
+      - name: Install dependencies (pnpm)
         if: ${{ hashFiles('package-lock.json') }}
-        run: npm ci
+        run: pnpm install
       # Add yarn/pnpm steps if needed
       # - name: Install dependencies (yarn) ...
       # - name: Install dependencies (pnpm) ...
       - name: Build Astro site
-        run: npm run build # Or yarn build / pnpm build
+        run: pnpm run build # Or yarn build / pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
