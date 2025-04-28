@@ -30,13 +30,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10
+          run_install: false
+
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
           cache: 'pnpm' # Or 'yarn' or 'pnpm'
-      - name: Install dependencies (pnpm)
-        if: ${{ hashFiles('package-lock.json') }}
+      - name: Install dependencies
         run: pnpm install
       # Add yarn/pnpm steps if needed
       # - name: Install dependencies (yarn) ...
