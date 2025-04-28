@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const currentPath = Astro.url.pathname;
 ---
 <BaseLayout pageTitle="內觀禪修：基本和進階練習">
 <h3 class="rtecenter">
@@ -8,71 +9,29 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 <br/>
            林武瑞 譯
           </h3>
-<p>
-<a href="#_Toc9124">
-            基本練習
-           </a>
-</p>
-<p>
-<a href="#_Toc5937">
-            基本練習一
-           </a>
-</p>
-<p>
-<a href="#_Toc21815">
-            基本練習二
-           </a>
-</p>
-<p>
-<a href="#_Toc13008">
-            基本練習三
-           </a>
-</p>
-<p>
-<a href="#_Toc28150">
-            基本經行練習四
-           </a>
-</p>
-<p>
-<a href="#_Toc12254">
-            禪修進階
-           </a>
-</p>
-<p>
-<a href="#_Toc649">
-            基本練習四
-           </a>
-</p>
-<p>
-<a href="#_Toc10770">
-            小結
-           </a>
-</p>
-<p>
-<a href="#_Toc23244">
-            進階練習──內觀階次
-           </a>
-</p>
-<p>
-<a href="#_Toc205">
-            辨明身心緣起
-           </a>
-</p>
-<p>
-<a href="#_Toc7085">
-            體　悟
-           </a>
-</p>
-<p>
-<a href="#_Toc17427">
-            內觀的深化
-           </a>
-</p>
-<p>
-<a href="#_Toc16582">
-            特別說明
-           </a>
-</p>
+
+  <h1>文章主標題</h1>
+
+  <!-- ===== START: Table of Contents ===== -->
+  <nav class="article-toc">
+    <p class="toc-title">目錄</p>
+    <ul>
+      <li><a href={currentPath + "#基本練習"}>基本練習</a></li>
+      <li><a href={currentPath + "#_Toc5937"}>基本練習一</a></li>
+      <li><a href={currentPath + "#_Toc21815"}>基本練習二</a></li>
+      <li><a href={currentPath + "#_Toc13008"}>基本練習三</a></li>
+      <li><a href={currentPath + "#_Toc28150"}>基本經行練習四</a></li>
+      <li><a href={currentPath + "#_Toc12254"}>禪修進階</a></li>
+      <li><a href={currentPath + "#_Toc649"}>基本練習四</a></li>
+      <li><a href={currentPath + "#_Toc10770"}>小結</a></li>
+      <li><a href={currentPath + "#_Toc23244"}>進階練習──內觀階次</a></li>
+      <li><a href={currentPath + "#_Toc205"}>辨明身心緣起</a></li>
+      <li><a href={currentPath + "#_Toc7085"}>體　悟</a></li>
+      <li><a href={currentPath + "#_Toc17427"}>內觀的深化</a></li>
+      <li><a href={currentPath + "#_Toc16582"}>特別說明</a></li>
+    </ul>
+  </nav>
+
 <p>
 <br/>
            人都趨樂避苦的道理眾所皆知。在這個世界上，人類竭盡所能想免除、減輕痛苦，享受幸福快樂。然而他們的努力方針主要想藉物質的手段造就色身的福祉，殊不知，幸福取決於內心的態度，而且只有少數人真正著眼於心靈的開發，更少的人仍努力不懈地致力於心靈的訓練。
@@ -84,15 +43,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
            因此，正確的方法顯然必須透過鍛煉、平靜，和淨化內心。我們在《大念處經》裡找到了這個方法，它是佛陀於兩千五百多年前所講的一部很著名的經典。在經文裡，佛陀如此教誨：「這是淨化有情，斷除憂悲苦惱，通達正道，體證涅槃的唯一道路，也就是四念處。」
            <br/>
 </p>
-<h1>
-<a id="_Toc28853" name="_Toc28853">
-</a>
-<a id="_Toc7693" name="_Toc7693">
-</a>
-<a id="_Toc9124" name="_Toc9124">
-            基本練習
-           </a>
-</h1>
+<h1><a id="基本練習" name="基本練習">基本練習</a></h1>
 <p>
            你若真誠想要修習禪定，於今生成就內觀智能，在修學期間必須捨棄流俗的知見和作為。這段期間的修學是為了淨化身心，清淨的行持是達到正定的首要步驟。而且你也必須遵守在家人的戒律（出家人則比照出家戒律），因為要證得內觀智能，戒律攸關緊要。
            <br/>

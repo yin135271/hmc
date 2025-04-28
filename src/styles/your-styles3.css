@@ -3,6 +3,10 @@
   box-sizing: border-box; /* More intuitive layout calculations */
 }
 
+html {
+  scroll-behavior: smooth; /* Enable smooth scrolling for TOC links */
+}
+
 body {
   margin: 0; /* Remove default browser margin */
   font-family: sans-serif; /* Set a base sans-serif for elements outside article */
@@ -76,6 +80,62 @@ main {
   /* padding-bottom: 1rem; */ /* Example if needed */
 }
 
+/* ===== START: Table of Contents Styles ===== */
+.article-toc {
+  background-color: #f1f3f5; /* Light background for TOC */
+  border: 1px solid #dee2e6; /* Subtle border */
+  border-radius: 4px; /* Slightly rounded corners */
+  padding: 1rem 1.5rem; /* Padding inside the box */
+  margin-top: 1.5rem; /* Space below H1 */
+  margin-bottom: 2.5rem; /* Space above first paragraph */
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Use Sans-serif */
+  font-size: 0.95rem; /* Slightly smaller font size */
+}
+
+.toc-title {
+  font-weight: bold;
+  font-size: 1.1rem; /* Slightly larger title */
+  color: #343a40; /* Darker title color */
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #ced4da; /* Separator line under title */
+}
+
+.article-toc ul {
+  list-style: none; /* Remove default bullets */
+  padding-left: 0; /* Remove default indentation */
+  margin-top: 0;
+  margin-bottom: 0; /* Remove default margins */
+}
+
+/* Style for nested lists (sub-sections) */
+.article-toc ul ul {
+  padding-left: 1.2em; /* Indent sub-items */
+  margin-top: 0.4em; /* Add a little space above sub-list */
+}
+
+.article-toc li {
+  margin-bottom: 0.6em; /* Spacing between TOC items */
+}
+.article-toc li:last-child {
+  margin-bottom: 0; /* No margin on the very last item */
+}
+
+.article-toc a {
+  text-decoration: none; /* Remove underline */
+  color: #0056b3; /* Standard link blue */
+  border-bottom: none; /* Override article link style if needed */
+  transition: color 0.2s ease;
+}
+
+.article-toc a:hover,
+.article-toc a:focus {
+  color: #003d80; /* Darker blue on hover */
+  text-decoration: underline; /* Add underline on hover for clarity */
+}
+
+/* ===== END: Table of Contents Styles ===== */
 
 /* --- Article Content (Previous CSS - slightly adapted) --- */
 .article-content {
@@ -109,6 +169,7 @@ main {
 .article-content h1,
 .article-content h2,
 .article-content h3 {
+  scroll-margin-top: 2em; /* Adjust value based on header height or desired spacing */
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Sans-serif for headings */
   color: #111;
   line-height: 1.4;
@@ -116,9 +177,16 @@ main {
   margin-bottom: 0.8em;
 }
 /* Adjusted Heading Sizes slightly */
-.article-content h1 { font-size: 2.0rem; margin-top: 0; } /* First heading no top margin */
+.article-content h1 { font-size: 2.0rem; margin-top: 0; scroll-margin-top: 0; } /* First heading no top margin */
 .article-content h2 { font-size: 1.6rem; }
 .article-content h3 { font-size: 1.3rem; }
+
+/* Ensure headings with IDs are targetable */
+.article-content h2[id],
+.article-content h3[id] {
+    /* No specific style needed just for having an ID, */
+    /* but selector confirms they exist */
+}
 
 .article-content a {
   color: #0056b3;
