@@ -16,7 +16,7 @@ body {
 
 /* --- Site Header --- */
 .site-header {
-  background-color: #ffffff; /* White background */
+  background-color: #eadcdc; /* White background */
   border-bottom: 1px solid #e0e0e0; /* Subtle separator line */
   padding: 0.75rem 1.5rem; /* Padding top/bottom and left/right */
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Sans-serif for UI */
@@ -86,8 +86,8 @@ main {
   border: 1px solid #dee2e6; /* Subtle border */
   border-radius: 4px; /* Slightly rounded corners */
   padding: 1rem 1.5rem; /* Padding inside the box */
-  margin-top: 1.5rem; /* Space below H1 */
-  margin-bottom: 2.5rem; /* Space above first paragraph */
+  margin-top: 0rem; /* Space below H1 */
+  margin-bottom: .5rem; /* Space above first paragraph */
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Use Sans-serif */
   font-size: 0.95rem; /* Slightly smaller font size */
 }
@@ -97,7 +97,7 @@ main {
   font-size: 1.1rem; /* Slightly larger title */
   color: #343a40; /* Darker title color */
   margin-top: 0;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.3rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #ced4da; /* Separator line under title */
 }
@@ -116,7 +116,7 @@ main {
 }
 
 .article-toc li {
-  margin-bottom: 0.6em; /* Spacing between TOC items */
+  margin-bottom: 0.4em; /* Spacing between TOC items */
 }
 .article-toc li:last-child {
   margin-bottom: 0; /* No margin on the very last item */
@@ -146,12 +146,13 @@ main {
   font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", "Microsoft JhengHei", "Heiti TC", sans-serif;
 
   font-size: 1.15rem; /* Approx 18.4px */
-  line-height: 1.8;
+  line-height: 1.5;
   color: #333;
-  background-color: #ffffff; /* White background for article contrasts page bg */
-  max-width: 60em; /* Approx 650-750px depending on font/size */
-  margin: 3rem auto; /* More top/bottom margin to separate from header/footer */
-  padding: 2rem 2.5rem; /* Generous padding inside article */
+  background-color: #f9f9f0; /* White background for article contrasts page bg */
+  max-width: 70em; /* Approx 650-750px depending on font/size */
+  /*  More top/bottom margin to separate from header/footer */
+  margin: 0 auto;
+  padding: .5rem 1.5rem; /* Generous padding inside article */
   text-align: left;
   border: 1px solid #e0e0e0; /* Optional: Subtle border for the article box */
   box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Optional: Subtle shadow */
@@ -169,12 +170,12 @@ main {
 .article-content h1,
 .article-content h2,
 .article-content h3 {
-  scroll-margin-top: 2em; /* Adjust value based on header height or desired spacing */
+  scroll-margin-top: 1em; /* Adjust value based on header height or desired spacing */
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Sans-serif for headings */
   color: #111;
   line-height: 1.4;
-  margin-top: 2em;
-  margin-bottom: 0.8em;
+  margin-top: .2em;
+  margin-bottom: 0.1em;
 }
 /* Adjusted Heading Sizes slightly */
 .article-content h1 { font-size: 2.0rem; margin-top: 0; scroll-margin-top: 0; } /* First heading no top margin */
