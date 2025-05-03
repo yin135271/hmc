@@ -174,8 +174,8 @@ main {
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; /* Sans-serif for headings */
   color: #111;
   line-height: 1.4;
-  margin-top: .2em;
-  margin-bottom: 0.1em;
+  margin-top: .5em;
+  margin-bottom: 0.4em;
 }
 /* Adjusted Heading Sizes slightly */
 .article-content h1 { font-size: 2.0rem; margin-top: 0; scroll-margin-top: 0; } /* First heading no top margin */
