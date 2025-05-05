@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 import '@fontsource/noto-sans-tc';
 import '../styles/your-styles3.css';
 const site_title = "休斯頓禪修社區";
@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL + (
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <base href={base} />
-  <title>{site_title} - {title}</title>
+  <title>{pageTitle}</title>
 </head>
 <body>
 
@@ -32,6 +32,7 @@ const base = import.meta.env.BASE_URL + (
 
   <main>
     <article class="article-content">
+      <h2>{pageTitle}</h2>
       <slot />
     </article>
   </main>
